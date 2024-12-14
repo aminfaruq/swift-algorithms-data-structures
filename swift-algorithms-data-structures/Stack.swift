@@ -48,3 +48,8 @@ extension Stack: CustomStringConvertible {
     }
 }
 
+extension Stack: ExpressibleByArrayLiteral {
+    init(arrayLiteral elements: Element...) {
+        storage = elements
+    }
+}
