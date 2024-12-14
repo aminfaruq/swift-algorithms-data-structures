@@ -12,6 +12,8 @@
 		8308EAE12D0D529A007DE7FB /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308EAE02D0D529A007DE7FB /* StackTest.swift */; };
 		83BBD64C2D0D63AD007DD730 /* BinaryTrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBD64B2D0D63AD007DD730 /* BinaryTrees.swift */; };
 		83BBD64E2D0D63D2007DD730 /* BinaryTreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBD64D2D0D63D2007DD730 /* BinaryTreeTest.swift */; };
+		83BBD6502D0DA250007DD730 /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBD64F2D0DA250007DD730 /* BinarySearch.swift */; };
+		83BBD6522D0DA4B6007DD730 /* BinarySearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBD6512D0DA4B6007DD730 /* BinarySearchTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		8308EAE02D0D529A007DE7FB /* StackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
 		83BBD64B2D0D63AD007DD730 /* BinaryTrees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTrees.swift; sourceTree = "<group>"; };
 		83BBD64D2D0D63D2007DD730 /* BinaryTreeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeTest.swift; sourceTree = "<group>"; };
+		83BBD64F2D0DA250007DD730 /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
+		83BBD6512D0DA4B6007DD730 /* BinarySearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			children = (
 				8308EADE2D0D5289007DE7FB /* Stack.swift */,
 				83BBD64B2D0D63AD007DD730 /* BinaryTrees.swift */,
+				83BBD64F2D0DA250007DD730 /* BinarySearch.swift */,
 			);
 			path = "swift-algorithms-data-structures";
 			sourceTree = "<group>";
@@ -84,6 +89,7 @@
 			children = (
 				8308EAE02D0D529A007DE7FB /* StackTest.swift */,
 				83BBD64D2D0D63D2007DD730 /* BinaryTreeTest.swift */,
+				83BBD6512D0DA4B6007DD730 /* BinarySearchTest.swift */,
 			);
 			path = "swift-algorithms-data-structuresTests";
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			files = (
 				83BBD64C2D0D63AD007DD730 /* BinaryTrees.swift in Sources */,
 				8308EADF2D0D5289007DE7FB /* Stack.swift in Sources */,
+				83BBD6502D0DA250007DD730 /* BinarySearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BBD64E2D0D63D2007DD730 /* BinaryTreeTest.swift in Sources */,
+				83BBD6522D0DA4B6007DD730 /* BinarySearchTest.swift in Sources */,
 				8308EAE12D0D529A007DE7FB /* StackTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
