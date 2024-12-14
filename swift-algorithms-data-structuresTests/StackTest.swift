@@ -25,4 +25,12 @@ final class StackTest: XCTestCase {
     func test_pop() {
         XCTAssertEqual(stack.pop(), 4)
     }
+    
+    func test_peek() {
+        XCTAssertEqual(stack.peek(), 4)
+    }
+    
+    func test_isEmpty() {
+        XCTAssertFalse(stack.isEmpty)
+    }
 }

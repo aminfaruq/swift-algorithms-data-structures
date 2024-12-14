@@ -11,6 +11,16 @@ struct Stack<Element> {
     // Storage
     private var storage: [Element] = []
     
+    // Empty
+    var isEmpty: Bool {
+        return peek() == nil
+    }
+    
+    // Peek
+    func peek() -> Element? {
+        return storage.last
+    }
+    
     // Push
     mutating func push(_ element: Element) {
         storage.append(element)
