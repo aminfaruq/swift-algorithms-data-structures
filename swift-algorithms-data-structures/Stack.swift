@@ -7,13 +7,19 @@
 
 import Foundation
 
-struct Stack<Element> {
+struct Stack<Element: Equatable> : Equatable {
     // Storage
     private var storage: [Element] = []
     
     // Empty
     var isEmpty: Bool {
         return peek() == nil
+    }
+    
+    init() {}
+    
+    init(_ elements: [Element]) {
+        storage = elements
     }
     
     // Peek
@@ -41,3 +47,4 @@ extension Stack: CustomStringConvertible {
             .joined(separator: " ")
     }
 }
+

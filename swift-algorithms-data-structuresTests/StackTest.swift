@@ -33,4 +33,9 @@ final class StackTest: XCTestCase {
     func test_isEmpty() {
         XCTAssertFalse(stack.isEmpty)
     }
+    
+    func test_initWithArray() {
+        let array = [1,2,3,4]
+        XCTAssertEqual(stack, Stack(array))
+    }
 }
