@@ -10,6 +10,8 @@
 		8308EACF2D0D5262007DE7FB /* swift_algorithms_data_structures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8308EAC62D0D5262007DE7FB /* swift_algorithms_data_structures.framework */; };
 		8308EADF2D0D5289007DE7FB /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308EADE2D0D5289007DE7FB /* Stack.swift */; };
 		8308EAE12D0D529A007DE7FB /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308EAE02D0D529A007DE7FB /* StackTest.swift */; };
+		83BBD64C2D0D63AD007DD730 /* BinaryTrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBD64B2D0D63AD007DD730 /* BinaryTrees.swift */; };
+		83BBD64E2D0D63D2007DD730 /* BinaryTreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBD64D2D0D63D2007DD730 /* BinaryTreeTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		8308EACE2D0D5262007DE7FB /* swift-algorithms-data-structuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-algorithms-data-structuresTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8308EADE2D0D5289007DE7FB /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		8308EAE02D0D529A007DE7FB /* StackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
+		83BBD64B2D0D63AD007DD730 /* BinaryTrees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTrees.swift; sourceTree = "<group>"; };
+		83BBD64D2D0D63D2007DD730 /* BinaryTreeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				8308EADE2D0D5289007DE7FB /* Stack.swift */,
+				83BBD64B2D0D63AD007DD730 /* BinaryTrees.swift */,
 			);
 			path = "swift-algorithms-data-structures";
 			sourceTree = "<group>";
@@ -78,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				8308EAE02D0D529A007DE7FB /* StackTest.swift */,
+				83BBD64D2D0D63D2007DD730 /* BinaryTreeTest.swift */,
 			);
 			path = "swift-algorithms-data-structuresTests";
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BBD64C2D0D63AD007DD730 /* BinaryTrees.swift in Sources */,
 				8308EADF2D0D5289007DE7FB /* Stack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BBD64E2D0D63D2007DD730 /* BinaryTreeTest.swift in Sources */,
 				8308EAE12D0D529A007DE7FB /* StackTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
