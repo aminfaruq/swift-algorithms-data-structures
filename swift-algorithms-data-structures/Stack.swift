@@ -17,6 +17,10 @@ struct Stack<Element> {
     }
     
     // Pop
+    @discardableResult
+    mutating func pop() -> Element? {
+        return storage.popLast()
+    }
     
 }
 
