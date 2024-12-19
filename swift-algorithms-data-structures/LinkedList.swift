@@ -8,103 +8,106 @@
 import Foundation
 
 class LinkedList {
-    var head: Node?
+    var head: Node? // The first node in the linked list
     
+    // Initialize the linked list with an optional head node
     init(head: Node?) {
         self.head = head
     }
     
+    // Add a new node to the end of the linked list
     func append(_ node: Node) {
+        // If the list is empty, set the new node as the head
         guard head != nil else {
             head = node
             return
         }
         
+        // Start at the head and traverse to the last node
         var current = head
         while let _ = current?.next {
             current = current?.next
         }
         
+        // Link the new node to the last node
         current?.next = node
     }
     
-    // Get a node from a particular position.
-    // Assume the first position is "1".
-    // Return "nil" if position is not in the list.
+    // Get a node at a specific position (1-based index)
     func getNode(atPosition position: Int) -> Node? {
-        // position less than 1 not valid
+        // Position less than 1 is invalid
         guard position >= 1 else { return nil }
         
-        var current = head
-        var currentPosition = 1
+        var current = head // Start at the head of the list
+        var currentPosition = 1 // Start counting from position 1
         
+        // Traverse the list to find the node at the given position
         while let currentNode = current {
             if currentPosition == position {
-                return currentNode
+                return currentNode // Return the node if the position matches
             }
             current = currentNode.next
             currentPosition += 1
         }
         
+        // If the position is out of range, return nil
         return nil
     }
     
-    // Insert a new node at the given position.
-    // Assume the first position is "1".
-    // Inserting at position 3 means between
-    // the 2nd and 3rd nodes.
+    // Insert a new node at a specific position (1-based index)
     func insertNode(_ node: Node, at position: Int) {
-        // position less than 1 not valid
+        // Position less than 1 is invalid
         guard position >= 1 else { return }
         
-        // if want to insert on position 1
+        // If inserting at the head (position 1)
         if position == 1 {
-            node.next = head
-            head = node
+            node.next = head // Point the new node to the current head
+            head = node // Update the head to the new node
             return
         }
         
-        var current = head
-        var currentPosition = 1
+        var current = head // Start at the head
+        var currentPosition = 1 // Start counting from position 1
         
-        // Navigate position before the target positon
+        // Traverse to the node just before the target position
         while let currentNode = current, currentPosition < position - 1 {
             current = currentNode.next
             currentPosition += 1
         }
         
-        // if position greather than long list
+        // If the position is greater than the list length, do nothing
         guard let previousNode = current else { return }
         
-        // insert node
+        // Insert the new node between previousNode and the next node
         node.next = previousNode.next
         previousNode.next = node
     }
     
-    // Delete the first node with a given value.
+    // Delete the first node with a specific value
     func deleteNode(withValue value: Int) {
-        // if linked list is empty
+        // If the list is empty, do nothing
         guard head != nil else { return }
         
-        // if first node have match value
+        // If the head node matches the value, remove it
         if head?.value == value {
-            head = head?.next
+            head = head?.next // Update the head to the next node
             return
         }
         
-        var current = head
-        var previous: Node?
+        var current = head // Start at the head
+        var previous: Node? // Keep track of the previous node
         
-        // navigate from linked list for get match node
+        // Traverse the list to find the node with the matching value
         while let currentNode = current {
             if currentNode.value == value {
+                // Skip the matching node by linking the previous node to the next node
                 previous?.next = currentNode.next
                 return
             }
-            previous = current
-            current = currentNode.next
+            previous = current // Move the previous pointer
+            current = currentNode.next // Move to the next node
         }
         
-        //-> if not have matching value, there no delete action
+        // If no node matches the value, do nothing
     }
 }
