@@ -11,8 +11,13 @@ import XCTest
 final class ReverseStringTest: XCTestCase {
 
     func test_reverseString() {
-        
         let sut = reverseString("Hi My name is Amin")
+        
+        XCTAssertEqual(sut, "nimA si eman yM iH")
+    }
+    
+    func test_reverseString2() {
+        let sut = reverseString(input: "Hi My name is Amin")
         
         XCTAssertEqual(sut, "nimA si eman yM iH")
     }
