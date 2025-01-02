@@ -142,7 +142,7 @@
 		830F31752D26420D0046A6C1 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				830F31772D26423E0046A6C1 /* ReverseString.swift */,
+				830F317B2D268A8D0046A6C1 /* Arrays */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -150,9 +150,25 @@
 		830F31762D2642250046A6C1 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				830F31792D26424D0046A6C1 /* ReverseStringTest.swift */,
+				830F317C2D268A970046A6C1 /* Arrays */,
 			);
 			path = Exercise;
+			sourceTree = "<group>";
+		};
+		830F317B2D268A8D0046A6C1 /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				830F31772D26423E0046A6C1 /* ReverseString.swift */,
+			);
+			path = Arrays;
+			sourceTree = "<group>";
+		};
+		830F317C2D268A970046A6C1 /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				830F31792D26424D0046A6C1 /* ReverseStringTest.swift */,
+			);
+			path = Arrays;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
