@@ -57,5 +57,29 @@ class HashTable {
     func keys() -> [String] {
         return data.flatMap { $0.map { $0.key } }
     }
+    
+    /* Extra: keys() Without Collision
+     func keys() -> [String]? {
+         // Return nil if data is empty
+         if data.isEmpty {
+             return nil
+         }
+         
+         var result: [String] = []
+         
+         // Iterate over all buckets
+         for bucket in data {
+             // If the bucket is not empty
+             if !bucket.isEmpty {
+                 // Append all keys in the bucket
+                 for pair in bucket {
+                     result.append(pair.key)
+                 }
+             }
+         }
+         
+         return result
+     }
+     */
 
 }
