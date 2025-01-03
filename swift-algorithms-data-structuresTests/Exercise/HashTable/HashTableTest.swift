@@ -18,6 +18,7 @@ final class HashTableTest: XCTestCase {
         
         XCTAssertEqual(sut.get("grapes"), 1000)
         XCTAssertEqual(sut.get("apple"), 5000)
+        XCTAssertEqual(sut.keys(), ["apple", "grapes"])
         XCTAssertNil(sut.get("Guava"), "Should nil if didn't have")
     }
 }

@@ -36,4 +36,26 @@ class HashTable {
         let index = hash(key)
         return data[index].first(where: { $0.key == key } )?.value
     }
+    
+    //O(n^2)
+    /*
+     func keys() -> [String] {
+        var keysArray: [String] = []
+        for index in data.indices {
+            if !data[index].isEmpty {
+                for pair in data[index] {
+                    keysArray.append(pair.key)
+                }
+            }
+        }
+        
+        return keysArray
+    }
+     */
+    
+    //O(n)
+    func keys() -> [String] {
+        return data.flatMap { $0.map { $0.key } }
+    }
+
 }
