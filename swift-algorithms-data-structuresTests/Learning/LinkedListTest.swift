@@ -74,6 +74,7 @@ final class LinkedListTest: XCTestCase {
     func test_printList() {
         linkedList.append(n4)
         linkedList.append(Node(value: 5))
-        print(linkedList.printList())
+        
+        XCTAssertEqual(linkedList.printList(), [1,2,3,4,5])
     }
 }
