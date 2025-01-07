@@ -110,4 +110,10 @@ class LinkedList {
         
         // If no node matches the value, do nothing
     }
+    
+    // Add a new node to the start of the linked list
+    func prepend(_ node: Node) {
+        node.next = head // Set the next pointer of the new node to the current head
+        head = node // Update the head to the new node
+    }
 }

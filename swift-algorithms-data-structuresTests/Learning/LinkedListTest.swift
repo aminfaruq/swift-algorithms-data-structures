@@ -59,4 +59,9 @@ final class LinkedListTest: XCTestCase {
         XCTAssertEqual(linkedList.getNode(atPosition: 3)?.value, nil)
     }
     
+    func test_prepend() {
+        linkedList.prepend(Node(value: 12))
+        
+        XCTAssertEqual(linkedList.getNode(atPosition: 1)?.value, 12)
+    }
 }
