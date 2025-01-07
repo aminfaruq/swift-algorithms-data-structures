@@ -116,4 +116,15 @@ class LinkedList {
         node.next = head // Set the next pointer of the new node to the current head
         head = node // Update the head to the new node
     }
+    
+    func printList() -> [Int] {
+        var array: [Int] = []
+        var currentNode = self.head
+        while (currentNode != nil) {
+            array.append(currentNode?.value ?? 0)
+            currentNode = currentNode?.next
+        }
+        
+        return array
+    }
 }

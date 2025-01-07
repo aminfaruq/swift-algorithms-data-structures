@@ -64,4 +64,16 @@ final class LinkedListTest: XCTestCase {
         
         XCTAssertEqual(linkedList.getNode(atPosition: 1)?.value, 12)
     }
+    
+    func test_append() {
+        linkedList.append(n4)
+        
+        XCTAssertEqual(linkedList.getNode(atPosition: 4)?.value, 4)
+    }
+    
+    func test_printList() {
+        linkedList.append(n4)
+        linkedList.append(Node(value: 5))
+        print(linkedList.printList())
+    }
 }
