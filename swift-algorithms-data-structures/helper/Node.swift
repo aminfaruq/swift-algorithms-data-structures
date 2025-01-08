@@ -7,11 +7,11 @@
 
 import Foundation
 
-class Node {
-    var value: Int
-    var next: Node?
-    
-    init(value: Int) {
-        self.value = value
-    }
-}
+//class Node {
+//    var value: Int
+//    var next: Node?
+//    
+//    init(value: Int) {
+//        self.value = value
+//    }
+//}

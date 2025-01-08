@@ -8,123 +8,114 @@
 import Foundation
 
 class LinkedList {
-    var head: Node? // The first node in the linked list
-    
-    // Initialize the linked list with an optional head node
-    init(head: Node?) {
-        self.head = head
+    // Node class represents an element in the linked list
+    class Node {
+        var value: Int // Value of the node
+        var next: Node? // Reference to the next node
+        
+        init(value: Int) {
+            self.value = value
+            self.next = nil
+        }
     }
     
-    // Add a new node to the end of the linked list
-    func append(_ node: Node) {
-        // If the list is empty, set the new node as the head
-        guard head != nil else {
-            head = node
-            return
-        }
-        
-        // Start at the head and traverse to the last node
-        var current = head
-        while let _ = current?.next {
-            current = current?.next
-        }
-        
-        // Link the new node to the last node
-        current?.next = node
+    var head: Node? // First node in the list
+    var tail: Node? // Last node in the list
+    var length: Int = 0 // Number of nodes in the list
+    
+    // Initialize the linked list with the first node
+    init(_ value: Int) {
+        let newNode = Node(value: value)
+        self.head = newNode
+        self.tail = newNode
+        self.length = 1
     }
     
-    // Get a node at a specific position (1-based index)
-    func getNode(atPosition position: Int) -> Node? {
-        // Position less than 1 is invalid
-        guard position >= 1 else { return nil }
-        
-        var current = head // Start at the head of the list
-        var currentPosition = 1 // Start counting from position 1
-        
-        // Traverse the list to find the node at the given position
-        while let currentNode = current {
-            if currentPosition == position {
-                return currentNode // Return the node if the position matches
-            }
-            current = currentNode.next
-            currentPosition += 1
-        }
-        
-        // If the position is out of range, return nil
-        return nil
+    // Add a node to the end of the linked list
+    @discardableResult
+    func append(_ value: Int) -> LinkedList {
+        let newNode = Node(value: value)
+        tail?.next = newNode // Link the current tail to the new node
+        tail = newNode // Update the tail to the new node
+        length += 1 // Increment the length of the list
+        return self
     }
     
-    // Insert a new node at a specific position (1-based index)
-    func insertNode(_ node: Node, at position: Int) {
-        // Position less than 1 is invalid
-        guard position >= 1 else { return }
-        
-        // If inserting at the head (position 1)
-        if position == 1 {
-            node.next = head // Point the new node to the current head
-            head = node // Update the head to the new node
-            return
+    // Add a node to the start of the linked list
+    @discardableResult
+    func prepend(_ value: Int) -> LinkedList {
+        let newNode = Node(value: value)
+        newNode.next = head // Link the new node to the current head
+        head = newNode // Update the head to the new node
+        if length == 0 { // If the list was empty, update the tail as well
+            tail = newNode
         }
-        
-        var current = head // Start at the head
-        var currentPosition = 1 // Start counting from position 1
-        
-        // Traverse to the node just before the target position
-        while let currentNode = current, currentPosition < position - 1 {
-            current = currentNode.next
-            currentPosition += 1
-        }
-        
-        // If the position is greater than the list length, do nothing
-        guard let previousNode = current else { return }
-        
-        // Insert the new node between previousNode and the next node
-        node.next = previousNode.next
-        previousNode.next = node
+        length += 1 // Increment the length of the list
+        return self
     }
     
-    // Delete the first node with a specific value
-    func deleteNode(withValue value: Int) {
-        // If the list is empty, do nothing
-        guard head != nil else { return }
-        
-        // If the head node matches the value, remove it
-        if head?.value == value {
-            head = head?.next // Update the head to the next node
-            return
-        }
-        
-        var current = head // Start at the head
-        var previous: Node? // Keep track of the previous node
-        
-        // Traverse the list to find the node with the matching value
-        while let currentNode = current {
-            if currentNode.value == value {
-                // Skip the matching node by linking the previous node to the next node
-                previous?.next = currentNode.next
-                return
-            }
-            previous = current // Move the previous pointer
-            current = currentNode.next // Move to the next node
-        }
-        
-        // If no node matches the value, do nothing
-    }
-    
-    // Add a new node to the start of the linked list
-    func prepend(_ node: Node) {
-        node.next = head // Set the next pointer of the new node to the current head
-        head = node // Update the head to the new node
-    }
-    
+    // Print all node values in the list as an array
     func printList() -> [Int] {
-        var array: [Int] = []
-        var currentNode = self.head
-        while (currentNode != nil) {
-            array.append(currentNode?.value ?? 0)
-            currentNode = currentNode?.next
+        var array: [Int] = [] // Array to store node values
+        var currentNode = head // Start from the head
+        while let node = currentNode { // Traverse until the end of the list
+            array.append(node.value) // Add node value to the array
+            currentNode = node.next // Move to the next node
+        }
+        return array // Return the array of values
+    }
+    
+    // Traverse to a specific index in the linked list
+    private func traverseToIndex(_ index: Int) -> Node? {
+        guard index >= 0 && index < length else { return nil } // Ensure index is valid
+        var currentNode = head // Start from the head
+        var counter = 0 // Counter to track the current position
+        while counter != index { // Traverse until the target index
+            currentNode = currentNode?.next // Move to the next node
+            counter += 1
+        }
+        return currentNode // Return the node at the target index
+    }
+    
+    // Get the value of the node at a specific index
+    func getNode(_ index: Int) -> Int? {
+        guard let node = traverseToIndex(index) else { return nil } // Get the node at the index
+        return node.value // Return the node's value
+    }
+    
+    // Insert a new node at a specific index
+    @discardableResult
+    func insert(_ index: Int, _ value: Int) -> [Int] {
+        if index >= length { // If index is greater than or equal to length, append the value
+            _ = append(value)
+            return printList()
         }
         
-        return array
+        let newNode = Node(value: value)
+        if index == 0 { // If inserting at the start, use prepend
+            _ = prepend(value)
+            return printList()
+        }
+        
+        let leader = traverseToIndex(index - 1) // Get the node before the target index
+        let holdingPointer = leader?.next // Save the next node
+        leader?.next = newNode // Link the leader to the new node
+        newNode.next = holdingPointer // Link the new node to the next node
+        length += 1 // Increment the length
+        return printList()
+    }
+    
+    // Remove a node at a specific index
+    @discardableResult
+    func remove(_ index: Int) -> [Int] {
+        guard index > 0 && index < length else { return printList() } // Ensure valid index
+        let leader = traverseToIndex(index - 1) // Get the node before the target index
+        let unwantedNode = leader?.next // The node to be removed
+        leader?.next = unwantedNode?.next // Link the leader to the node after the unwanted node
+        if index == length - 1 { // If removing the last node, update the tail
+            tail = leader
+        }
+        length -= 1 // Decrement the length
+        return printList()
     }
 }

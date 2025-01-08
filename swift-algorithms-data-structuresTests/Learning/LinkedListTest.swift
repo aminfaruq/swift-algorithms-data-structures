@@ -10,71 +10,84 @@ import XCTest
 
 final class LinkedListTest: XCTestCase {
     
-    var n1: Node!
-    var n2: Node!
-    var n3: Node!
-    var n4: Node!
-    var linkedList: LinkedList!
-    
-    override func setUp() {
-        super.setUp()
+    func test_initialize() {
+        let sut = makeSUT()
         
-        n1 = Node(value: 1)
-        n2 = Node(value: 2)
-        n3 = Node(value: 3)
-        n4 = Node(value: 4)
-        
-        linkedList = LinkedList(head: n1)
-        linkedList.append(n2)
-        linkedList.append(n3)
+        XCTAssertEqual(sut.getNode(0), 1)
+        XCTAssertEqual(sut.printList(), [1])
     }
     
-    override func tearDown() {
-        // remove property when done
-        n1 = nil
-        n2 = nil
-        n3 = nil
-        n4 = nil
-        linkedList = nil
+    func test_append_toEmptyList() {
+        let sut = makeSUT()
         
-        super.tearDown()
-    }
-    
-    func test_getNode() {
-        XCTAssertEqual(linkedList.head?.next?.next?.value, 3)
-        XCTAssertEqual(linkedList.getNode(atPosition: 3)?.value, 3)
-    }
-    
-    func test_insertNode() {
-        linkedList.insertNode(n4, at: 3)
+        sut.append(2)
         
-        XCTAssertEqual(linkedList.getNode(atPosition: 3)?.value, 4)
-    }
-    
-    func test_deleteNode() {
-        linkedList.deleteNode(withValue: 1)
-        
-        XCTAssertEqual(linkedList.getNode(atPosition: 1)?.value, 2)
-        XCTAssertEqual(linkedList.getNode(atPosition: 2)?.value, 3)
-        XCTAssertEqual(linkedList.getNode(atPosition: 3)?.value, nil)
+        XCTAssertEqual(sut.getNode(1), 2)
+        XCTAssertEqual(sut.printList(), [1,2])
     }
     
     func test_prepend() {
-        linkedList.prepend(Node(value: 12))
+        let sut = makeSUT()
         
-        XCTAssertEqual(linkedList.getNode(atPosition: 1)?.value, 12)
+        sut.prepend(10)
+        sut.append(2)
+        
+        XCTAssertEqual(sut.getNode(0), 10)
+        XCTAssertEqual(sut.printList(), [10,1,2])
     }
     
-    func test_append() {
-        linkedList.append(n4)
+    func test_insert() {
+        let sut = makeSUT()
         
-        XCTAssertEqual(linkedList.getNode(atPosition: 4)?.value, 4)
+        sut.prepend(0)
+        sut.append(2)
+        sut.insert(3, 3)
+        
+        XCTAssertEqual(sut.getNode(0), 0)
+        XCTAssertEqual(sut.printList(), [0,1,2,3])
     }
     
-    func test_printList() {
-        linkedList.append(n4)
-        linkedList.append(Node(value: 5))
+    func test_remove() {
+        let sut = makeSUT()
         
-        XCTAssertEqual(linkedList.printList(), [1,2,3,4,5])
+        sut.prepend(0)
+        sut.append(2)
+        sut.insert(3, 3)
+        sut.remove(3)
+        
+        XCTAssertEqual(sut.getNode(0), 0)
+        XCTAssertEqual(sut.printList(), [0,1,2])
     }
+    
+    func test_remove_onEmptyList() {
+        let sut = makeSUT()
+        
+        sut.append(2)
+        sut.remove(1)
+        
+        XCTAssertNil(sut.getNode(1))
+        XCTAssertEqual(sut.printList(), [1])
+    }
+    
+    func test_insert_withInvalidIndex() {
+        let sut = makeSUT()
+        
+        sut.insert(3, 99)
+        
+        XCTAssertEqual(sut.printList(), [1,99])
+    }
+    
+    func test_getNode_outOfBounds() {
+        let sut = makeSUT()
+        
+        sut.append(5)
+        
+        XCTAssertNil(sut.getNode(2))
+    }
+    
+    //MARK: Helper
+    func makeSUT() -> LinkedList {
+        return LinkedList(1)
+    }
+    
 }
