@@ -73,9 +73,8 @@ class LinkedList {
     }
     
     // Remove a node at a specific index
-    @discardableResult
-    func remove(_ index: Int) -> [Int] {
-        guard index > 0 && index < length else { return printList() } // Ensure valid index
+    func remove(_ index: Int)  {
+        guard index > 0 && index < length else { return } // Ensure valid index
         let leader = traverseToIndex(index - 1) // Get the node before the target index
         let unwantedNode = leader?.next // The node to be removed
         leader?.next = unwantedNode?.next // Link the leader to the node after the unwanted node
@@ -83,7 +82,6 @@ class LinkedList {
             tail = leader
         }
         length -= 1 // Decrement the length
-        return printList()
     }
 }
 
