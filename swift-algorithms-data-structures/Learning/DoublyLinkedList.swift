@@ -56,6 +56,30 @@ class DoublyLinkedList {
         length += 1
         return self
     }
+    
+    @discardableResult
+    func insert(_ index: Int, _ value: Int) -> [Int] {
+        if index >= length {
+            append(value)
+            return printList()
+        }
+        
+        let newNode = Node(value: value)
+        if index == 0 {
+            prepend(value)
+            return printList()
+        }
+        
+        let leader = traverseToIndex(index - 1)
+        let follower = leader?.next
+        leader?.next = newNode
+        newNode.previous = leader
+        newNode.next = follower
+        follower?.previous = newNode
+        
+        length += 1
+        return printList()
+    }
 
 }
 

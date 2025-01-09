@@ -36,6 +36,16 @@ final class DoublyLinkedListTest: XCTestCase {
         XCTAssertEqual(sut.showNodes(), "[Prev: nil, Value: 0, Next: 1] -> [Prev: 0, Value: 1, Next: nil]")
     }
     
+    func test_insert() {
+        let sut = makeSUT()
+        
+        sut.append(3)
+        sut.insert(1, 2)
+        
+        XCTAssertEqual(sut.printList(), [1, 2, 3])
+        XCTAssertEqual(sut.showNodes(), "[Prev: nil, Value: 1, Next: 2] -> [Prev: 1, Value: 2, Next: 3] -> [Prev: 2, Value: 3, Next: nil]")
+    }
+    
     //MARK: Helper
     func makeSUT() -> DoublyLinkedList {
         return DoublyLinkedList(1)

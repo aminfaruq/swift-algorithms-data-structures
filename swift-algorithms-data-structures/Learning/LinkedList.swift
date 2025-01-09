@@ -58,13 +58,13 @@ class LinkedList {
     @discardableResult
     func insert(_ index: Int, _ value: Int) -> [Int] {
         if index >= length { // If index is greater than or equal to length, append the value
-            _ = append(value)
+            append(value)
             return printList()
         }
         
         let newNode = Node(value: value)
         if index == 0 { // If inserting at the start, use prepend
-            _ = prepend(value)
+            prepend(value)
             return printList()
         }
         
