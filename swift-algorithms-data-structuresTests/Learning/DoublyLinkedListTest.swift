@@ -23,6 +23,7 @@ final class DoublyLinkedListTest: XCTestCase {
         sut.append(2)
         sut.append(3)
         
+        XCTAssertEqual(sut.printList(), [1, 2, 3])
         XCTAssertEqual(sut.showNodes(), "[Prev: nil, Value: 1, Next: 2] -> [Prev: 1, Value: 2, Next: 3] -> [Prev: 2, Value: 3, Next: nil]")
     }
     
@@ -31,6 +32,7 @@ final class DoublyLinkedListTest: XCTestCase {
         
         sut.prepend(0)
         
+        XCTAssertEqual(sut.printList(), [0, 1])
         XCTAssertEqual(sut.showNodes(), "[Prev: nil, Value: 0, Next: 1] -> [Prev: 0, Value: 1, Next: nil]")
     }
     
