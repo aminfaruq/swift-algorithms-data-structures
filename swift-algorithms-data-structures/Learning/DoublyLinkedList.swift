@@ -33,18 +33,15 @@ class DoublyLinkedList {
         self.length = 1
     }
     
-    @discardableResult
-    func append(_ value: Int) -> DoublyLinkedList {
+    func append(_ value: Int) {
         let newNode = Node(value: value)
         newNode.previous = tail
         tail?.next = newNode
         tail = newNode
         length += 1
-        return self
     }
     
-    @discardableResult
-    func prepend(_ value: Int) -> DoublyLinkedList {
+    func prepend(_ value: Int) {
         let newNode = Node(value: value)
         newNode.next = head
         head?.previous = newNode
@@ -54,7 +51,6 @@ class DoublyLinkedList {
             tail = newNode
         }
         length += 1
-        return self
     }
     
     func insert(_ index: Int, _ value: Int) {
