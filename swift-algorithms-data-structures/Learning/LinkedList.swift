@@ -32,18 +32,15 @@ class LinkedList {
     }
     
     // Add a node to the end of the linked list
-    @discardableResult
-    func append(_ value: Int) -> LinkedList {
+    func append(_ value: Int)  {
         let newNode = Node(value: value)
         tail?.next = newNode // Link the current tail to the new node
         tail = newNode // Update the tail to the new node
         length += 1 // Increment the length of the list
-        return self
     }
     
     // Add a node to the start of the linked list
-    @discardableResult
-    func prepend(_ value: Int) -> LinkedList {
+    func prepend(_ value: Int)  {
         let newNode = Node(value: value)
         newNode.next = head // Link the new node to the current head
         head = newNode // Update the head to the new node
@@ -51,7 +48,6 @@ class LinkedList {
             tail = newNode
         }
         length += 1 // Increment the length of the list
-        return self
     }
     
     // Insert a new node at a specific index
@@ -73,9 +69,8 @@ class LinkedList {
     }
     
     // Remove a node at a specific index
-    @discardableResult
-    func remove(_ index: Int) -> [Int] {
-        guard index > 0 && index < length else { return printList() } // Ensure valid index
+    func remove(_ index: Int)  {
+        guard index > 0 && index < length else { return } // Ensure valid index
         let leader = traverseToIndex(index - 1) // Get the node before the target index
         let unwantedNode = leader?.next // The node to be removed
         leader?.next = unwantedNode?.next // Link the leader to the node after the unwanted node
@@ -83,7 +78,6 @@ class LinkedList {
             tail = leader
         }
         length -= 1 // Decrement the length
-        return printList()
     }
 }
 
