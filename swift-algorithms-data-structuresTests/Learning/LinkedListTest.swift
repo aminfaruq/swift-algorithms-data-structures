@@ -39,9 +39,9 @@ final class LinkedListTest: XCTestCase {
     func test_insert() {
         let sut = makeSUT()
         
-        sut.prepend(0)
-        sut.append(2)
-        sut.insert(3, 3)
+        sut.prepend(0) // (0),1
+        sut.append(3) // 0,1,(3)
+        sut.insert(2, 2) // 0, 1, (2), 3
         
         XCTAssertEqual(sut.getNode(0), 0)
         XCTAssertEqual(sut.printList(), [0,1,2,3])
@@ -50,10 +50,10 @@ final class LinkedListTest: XCTestCase {
     func test_remove() {
         let sut = makeSUT()
         
-        sut.prepend(0)
-        sut.append(2)
-        sut.insert(3, 3)
-        sut.remove(3)
+        sut.prepend(0) // 0, 1
+        sut.append(3) // 0, 1, 3
+        sut.insert(2, 2) // 0, 1, 2, 3
+        sut.remove(3) // 0,1,2
         
         XCTAssertEqual(sut.getNode(0), 0)
         XCTAssertEqual(sut.printList(), [0,1,2])

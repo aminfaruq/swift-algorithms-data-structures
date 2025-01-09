@@ -55,17 +55,14 @@ class LinkedList {
     }
     
     // Insert a new node at a specific index
-    @discardableResult
-    func insert(_ index: Int, _ value: Int) -> [Int] {
+    func insert(_ index: Int, _ value: Int) {
         if index >= length { // If index is greater than or equal to length, append the value
             append(value)
-            return printList()
         }
         
         let newNode = Node(value: value)
         if index == 0 { // If inserting at the start, use prepend
             prepend(value)
-            return printList()
         }
         
         let leader = traverseToIndex(index - 1) // Get the node before the target index
@@ -73,7 +70,6 @@ class LinkedList {
         leader?.next = newNode // Link the leader to the new node
         newNode.next = holdingPointer // Link the new node to the next node
         length += 1 // Increment the length
-        return printList()
     }
     
     // Remove a node at a specific index

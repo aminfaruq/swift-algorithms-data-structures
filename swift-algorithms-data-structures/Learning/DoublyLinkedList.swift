@@ -57,17 +57,14 @@ class DoublyLinkedList {
         return self
     }
     
-    @discardableResult
-    func insert(_ index: Int, _ value: Int) -> [Int] {
+    func insert(_ index: Int, _ value: Int) {
         if index >= length {
             append(value)
-            return printList()
         }
         
         let newNode = Node(value: value)
         if index == 0 {
             prepend(value)
-            return printList()
         }
         
         let leader = traverseToIndex(index - 1)
@@ -76,9 +73,12 @@ class DoublyLinkedList {
         newNode.previous = leader
         newNode.next = follower
         follower?.previous = newNode
-        
         length += 1
-        return printList()
+    }
+    
+    func remove(_ index: Int) {
+        
+        
     }
 
 }
