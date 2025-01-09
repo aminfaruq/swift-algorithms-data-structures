@@ -56,8 +56,11 @@ class DoublyLinkedList {
         length += 1
         return self
     }
-    
-    //MARK: - Helpers
+
+}
+
+//MARK: - Helpers -
+extension DoublyLinkedList {
     
     // Print all node values in the list as an array
     func printList() -> [Int] {
@@ -106,5 +109,4 @@ class DoublyLinkedList {
         // Print the collected node information
         return result.joined(separator: " -> ")
     }
-
 }

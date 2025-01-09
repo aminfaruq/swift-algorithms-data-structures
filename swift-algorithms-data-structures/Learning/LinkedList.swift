@@ -54,35 +54,6 @@ class LinkedList {
         return self
     }
     
-    // Print all node values in the list as an array
-    func printList() -> [Int] {
-        var array: [Int] = [] // Array to store node values
-        var currentNode = head // Start from the head
-        while let node = currentNode { // Traverse until the end of the list
-            array.append(node.value) // Add node value to the array
-            currentNode = node.next // Move to the next node
-        }
-        return array // Return the array of values
-    }
-    
-    // Traverse to a specific index in the linked list
-    private func traverseToIndex(_ index: Int) -> Node? {
-        guard index >= 0 && index < length else { return nil } // Ensure index is valid
-        var currentNode = head // Start from the head
-        var counter = 0 // Counter to track the current position
-        while counter != index { // Traverse until the target index
-            currentNode = currentNode?.next // Move to the next node
-            counter += 1
-        }
-        return currentNode // Return the node at the target index
-    }
-    
-    // Get the value of the node at a specific index
-    func getNode(_ index: Int) -> Int? {
-        guard let node = traverseToIndex(index) else { return nil } // Get the node at the index
-        return node.value // Return the node's value
-    }
-    
     // Insert a new node at a specific index
     @discardableResult
     func insert(_ index: Int, _ value: Int) -> [Int] {
@@ -117,5 +88,37 @@ class LinkedList {
         }
         length -= 1 // Decrement the length
         return printList()
+    }
+}
+
+//MARK: - Helpers -
+extension LinkedList {
+    // Print all node values in the list as an array
+    func printList() -> [Int] {
+        var array: [Int] = [] // Array to store node values
+        var currentNode = head // Start from the head
+        while let node = currentNode { // Traverse until the end of the list
+            array.append(node.value) // Add node value to the array
+            currentNode = node.next // Move to the next node
+        }
+        return array // Return the array of values
+    }
+    
+    // Traverse to a specific index in the linked list
+    private func traverseToIndex(_ index: Int) -> Node? {
+        guard index >= 0 && index < length else { return nil } // Ensure index is valid
+        var currentNode = head // Start from the head
+        var counter = 0 // Counter to track the current position
+        while counter != index { // Traverse until the target index
+            currentNode = currentNode?.next // Move to the next node
+            counter += 1
+        }
+        return currentNode // Return the node at the target index
+    }
+    
+    // Get the value of the node at a specific index
+    func getNode(_ index: Int) -> Int? {
+        guard let node = traverseToIndex(index) else { return nil } // Get the node at the index
+        return node.value // Return the node's value
     }
 }
