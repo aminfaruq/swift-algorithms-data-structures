@@ -34,42 +34,44 @@ class DoublyLinkedList {
     }
     
     func append(_ value: Int) {
-        let newNode = Node(value: value)
-        newNode.previous = tail
-        tail?.next = newNode
-        tail = newNode
-        length += 1
+        let newNode = Node(value: value) // Create a new node with the given value
+        newNode.previous = tail // Link the new node's previous reference to the current tail
+        tail?.next = newNode // Link the current tail's next reference to the new node
+        tail = newNode // Update the tail to point to the new node
+        length += 1 // Increment the length of the linked list
     }
     
     func prepend(_ value: Int) {
-        let newNode = Node(value: value)
-        newNode.next = head
-        head?.previous = newNode
-        head = newNode
+        let newNode = Node(value: value) // Create a new node with the given value
+        newNode.next = head // Link the new node's next reference to the current head
+        head?.previous = newNode // Link the current head's previous reference to the new node
+        head = newNode // Update the head to point to the new node
         
-        if length == 0 {
+        if length == 0 { // If the list was empty, the new node is also the tail
             tail = newNode
         }
-        length += 1
+        length += 1 // Increment the length of the linked list
     }
     
     func insert(_ index: Int, _ value: Int) {
-        if index >= length {
+        if index >= length { // If the index is out of bounds (end of the list), append the value
             append(value)
+            return
         }
         
-        let newNode = Node(value: value)
-        if index == 0 {
+        let newNode = Node(value: value) // Create a new node with the given value
+        if index == 0 { // If inserting at the beginning of the list
             prepend(value)
+            return
         }
         
-        let leader = traverseToIndex(index - 1)
-        let follower = leader?.next
-        leader?.next = newNode
-        newNode.previous = leader
-        newNode.next = follower
-        follower?.previous = newNode
-        length += 1
+        let leader = traverseToIndex(index - 1) // Get the node before the insertion point
+        let follower = leader?.next // Get the node currently at the insertion point
+        leader?.next = newNode // Link the leader's next reference to the new node
+        newNode.previous = leader // Link the new node's previous reference to the leader
+        newNode.next = follower // Link the new node's next reference to the follower
+        follower?.previous = newNode // Link the follower's previous reference to the new node
+        length += 1 // Increment the length of the linked list
     }
     
     func remove(_ index: Int) {
