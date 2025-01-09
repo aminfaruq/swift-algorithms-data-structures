@@ -46,6 +46,18 @@ final class DoublyLinkedListTest: XCTestCase {
         XCTAssertEqual(sut.showNodes(), "[Prev: nil, Value: 1, Next: 2] -> [Prev: 1, Value: 2, Next: 3] -> [Prev: 2, Value: 3, Next: nil]")
     }
     
+    func test_remove() {
+        let sut = makeSUT()
+        
+        sut.append(2) // 1, 2
+        sut.append(3) // 1, 2, 3
+        sut.append(4) // 1, 2, 3, 4
+        sut.remove(2) // 1, 2, 4
+        
+        XCTAssertEqual(sut.printList(), [1, 2, 4])
+        XCTAssertEqual(sut.showNodes(), "[Prev: nil, Value: 1, Next: 2] -> [Prev: 1, Value: 2, Next: 4] -> [Prev: 2, Value: 4, Next: nil]")
+    }
+    
     //MARK: Helper
     func makeSUT() -> DoublyLinkedList {
         return DoublyLinkedList(1)

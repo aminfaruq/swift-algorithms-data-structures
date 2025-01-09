@@ -77,10 +77,25 @@ class DoublyLinkedList {
     }
     
     func remove(_ index: Int) {
-        
-        
+        guard index >= 0 && index < length else { return } // Allow index 0
+        if index == 0 { // Removing the head
+            head = head?.next
+            head?.previous = nil
+            if length == 1 { // If only one node was present
+                tail = nil
+            }
+        } else {
+            let leader = traverseToIndex(index - 1) // Node before the unwanted node
+            let unwantedNode = leader?.next
+            leader?.next = unwantedNode?.next
+            if unwantedNode === tail { // If removing the tail
+                tail = leader
+            } else {
+                unwantedNode?.next?.previous = leader // Update the next node's previous reference
+            }
+        }
+        length -= 1
     }
-
 }
 
 //MARK: - Helpers -
