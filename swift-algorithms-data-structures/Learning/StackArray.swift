@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Stack<Element: Equatable> : Equatable {
+struct StackArray<Element: Equatable> : Equatable {
     // Storage
     private var storage: [Element] = []
     
@@ -40,7 +40,7 @@ struct Stack<Element: Equatable> : Equatable {
     
 }
 
-extension Stack: CustomStringConvertible {
+extension StackArray: CustomStringConvertible {
     var description: String {
         return storage
             .map { "\($0)" }
@@ -48,7 +48,7 @@ extension Stack: CustomStringConvertible {
     }
 }
 
-extension Stack: ExpressibleByArrayLiteral {
+extension StackArray: ExpressibleByArrayLiteral {
     init(arrayLiteral elements: Element...) {
         storage = elements
     }

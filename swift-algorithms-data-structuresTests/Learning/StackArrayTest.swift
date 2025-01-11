@@ -8,8 +8,8 @@
 import XCTest
 @testable import swift_algorithms_data_structures
 
-final class StackTest: XCTestCase {
-    var stack = Stack<Int>()
+final class StackArrayTest: XCTestCase {
+    var stack = StackArray<Int>()
     
     override func setUp() {
         stack.push(1)
@@ -36,11 +36,11 @@ final class StackTest: XCTestCase {
     
     func test_initWithArray() {
         let array = [1,2,3,4]
-        XCTAssertEqual(stack, Stack(array))
+        XCTAssertEqual(stack, StackArray(array))
     }
     
     func test_arrayLiteral() {
-        let stack: Stack = ["blueberry", "plain", "potato"]
+        let stack: StackArray = ["blueberry", "plain", "potato"]
         XCTAssertEqual(stack, ["blueberry", "plain", "potato"])
     }
 }
