@@ -5,8 +5,6 @@
 //  Created by Amin faruq on 14/12/24.
 //
 
-import Foundation
-
 struct StackArray<Element: Equatable> : Equatable {
     // Storage
     private var storage: [Element] = []

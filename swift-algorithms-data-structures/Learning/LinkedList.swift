@@ -5,8 +5,6 @@
 //  Created by Amin faruq on 19/12/24.
 //
 
-import Foundation
-
 class LinkedList {
     // Node class represents an element in the linked list
     class Node {

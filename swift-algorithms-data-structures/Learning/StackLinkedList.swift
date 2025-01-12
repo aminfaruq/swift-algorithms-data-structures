@@ -5,8 +5,6 @@
 //  Created by Amin faruq on 11/01/25.
 //
 
-import Foundation
-
 class StackLinkedList<T> {
     private class Node {
         var value: T

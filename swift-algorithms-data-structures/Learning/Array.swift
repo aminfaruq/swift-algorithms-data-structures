@@ -5,8 +5,6 @@
 //  Created by Amin faruq on 02/01/25.
 //
 
-import Foundation
-
 class MyArray {
     
     private var data: [Int: Any] = [:]

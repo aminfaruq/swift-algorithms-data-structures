@@ -5,7 +5,6 @@
 //  Created by Amin faruq on 03/01/25.
 //
 
-import Foundation
 
 class HashTable {
     private var data: [[(key: String, value: Int)]]
