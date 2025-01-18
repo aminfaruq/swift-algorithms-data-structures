@@ -22,6 +22,8 @@
 		830F31802D268B1A0046A6C1 /* MergeSortedArraysTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830F317F2D268B1A0046A6C1 /* MergeSortedArraysTest.swift */; };
 		836A71052D3246D200410E42 /* StackLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836A71042D3246D200410E42 /* StackLinkedList.swift */; };
 		836A71072D3248F400410E42 /* StackLinkedListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836A71062D3248F400410E42 /* StackLinkedListTest.swift */; };
+		838C6EC82D3A97EA003A9073 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C6EC72D3A97EA003A9073 /* BinarySearchTree.swift */; };
+		838C6ECA2D3A97FC003A9073 /* BinarySearchTreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C6EC92D3A97FC003A9073 /* BinarySearchTreeTest.swift */; };
 		839F53592D283D6A00B6C3AA /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F53582D283D6A00B6C3AA /* HashTable.swift */; };
 		839F535B2D283D7F00B6C3AA /* HashTableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F535A2D283D7F00B6C3AA /* HashTableTest.swift */; };
 		83AC74F72D13FF570070FFC1 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC74F62D13FF570070FFC1 /* LinkedList.swift */; };
@@ -61,6 +63,8 @@
 		830F317F2D268B1A0046A6C1 /* MergeSortedArraysTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSortedArraysTest.swift; sourceTree = "<group>"; };
 		836A71042D3246D200410E42 /* StackLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackLinkedList.swift; sourceTree = "<group>"; };
 		836A71062D3248F400410E42 /* StackLinkedListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackLinkedListTest.swift; sourceTree = "<group>"; };
+		838C6EC72D3A97EA003A9073 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
+		838C6EC92D3A97FC003A9073 /* BinarySearchTreeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeTest.swift; sourceTree = "<group>"; };
 		839F53582D283D6A00B6C3AA /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		839F535A2D283D7F00B6C3AA /* HashTableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableTest.swift; sourceTree = "<group>"; };
 		83AC74F62D13FF570070FFC1 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				836A71042D3246D200410E42 /* StackLinkedList.swift */,
 				83BBD64B2D0D63AD007DD730 /* BinaryTrees.swift */,
 				83BBD64F2D0DA250007DD730 /* BinarySearch.swift */,
+				838C6EC72D3A97EA003A9073 /* BinarySearchTree.swift */,
 				83AC74F62D13FF570070FFC1 /* LinkedList.swift */,
 				36B17FBA2D2FA0CC00E021CB /* DoublyLinkedList.swift */,
 				830F316F2D2638B70046A6C1 /* Array.swift */,
@@ -166,6 +171,7 @@
 				836A71062D3248F400410E42 /* StackLinkedListTest.swift */,
 				83BBD64D2D0D63D2007DD730 /* BinaryTreeTest.swift */,
 				83BBD6512D0DA4B6007DD730 /* BinarySearchTest.swift */,
+				838C6EC92D3A97FC003A9073 /* BinarySearchTreeTest.swift */,
 				83AC74FA2D1401270070FFC1 /* LinkedListTest.swift */,
 				36B17FBC2D2FA2BB00E021CB /* DoublyLinkedListTest.swift */,
 				830F31712D2638C60046A6C1 /* ArrayTest.swift */,
@@ -342,6 +348,7 @@
 				836A71052D3246D200410E42 /* StackLinkedList.swift in Sources */,
 				830F31702D2638B70046A6C1 /* Array.swift in Sources */,
 				83AC74F72D13FF570070FFC1 /* LinkedList.swift in Sources */,
+				838C6EC82D3A97EA003A9073 /* BinarySearchTree.swift in Sources */,
 				36B17FBB2D2FA0CC00E021CB /* DoublyLinkedList.swift in Sources */,
 				3616080B2D2FCFC800D461F4 /* ReverseLinkedList.swift in Sources */,
 				83F5A0FF2D33978B00A02D6F /* Queue.swift in Sources */,
@@ -363,6 +370,7 @@
 				830F31802D268B1A0046A6C1 /* MergeSortedArraysTest.swift in Sources */,
 				361608092D2FCFB800D461F4 /* ReverseLinkedListTest.swift in Sources */,
 				83AC74FB2D1401270070FFC1 /* LinkedListTest.swift in Sources */,
+				838C6ECA2D3A97FC003A9073 /* BinarySearchTreeTest.swift in Sources */,
 				830F317A2D26424D0046A6C1 /* ReverseStringTest.swift in Sources */,
 				830F31722D2638C60046A6C1 /* ArrayTest.swift in Sources */,
 				836A71072D3248F400410E42 /* StackLinkedListTest.swift in Sources */,
