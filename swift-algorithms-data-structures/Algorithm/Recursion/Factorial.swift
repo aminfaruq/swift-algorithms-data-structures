@@ -8,7 +8,6 @@
 func findFactorialRecursive(_ number: Int) -> Int {
     var mutableNum = number
     mutableNum -= 1
-    var factorial = number * mutableNum
     if mutableNum >= 1 {
         return number * findFactorialRecursive(mutableNum)
     }
