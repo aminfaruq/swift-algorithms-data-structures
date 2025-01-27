@@ -21,6 +21,8 @@
 		830F317E2D268B0F0046A6C1 /* MergeSortedArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830F317D2D268B0F0046A6C1 /* MergeSortedArrays.swift */; };
 		830F31802D268B1A0046A6C1 /* MergeSortedArraysTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830F317F2D268B1A0046A6C1 /* MergeSortedArraysTest.swift */; };
 		8339E9AA2D4606EE00569F64 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339E9A92D4606EE00569F64 /* MergeSort.swift */; };
+		8339E9AC2D477F0D00569F64 /* QuickSortTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339E9AB2D477F0D00569F64 /* QuickSortTest.swift */; };
+		8339E9AE2D4783D300569F64 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339E9AD2D4783D300569F64 /* QuickSort.swift */; };
 		836A71052D3246D200410E42 /* StackLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836A71042D3246D200410E42 /* StackLinkedList.swift */; };
 		836A71072D3248F400410E42 /* StackLinkedListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836A71062D3248F400410E42 /* StackLinkedListTest.swift */; };
 		838C6EC82D3A97EA003A9073 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C6EC72D3A97EA003A9073 /* BinarySearchTree.swift */; };
@@ -76,6 +78,8 @@
 		830F317D2D268B0F0046A6C1 /* MergeSortedArrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSortedArrays.swift; sourceTree = "<group>"; };
 		830F317F2D268B1A0046A6C1 /* MergeSortedArraysTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSortedArraysTest.swift; sourceTree = "<group>"; };
 		8339E9A92D4606EE00569F64 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
+		8339E9AB2D477F0D00569F64 /* QuickSortTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSortTest.swift; sourceTree = "<group>"; };
+		8339E9AD2D4783D300569F64 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 		836A71042D3246D200410E42 /* StackLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackLinkedList.swift; sourceTree = "<group>"; };
 		836A71062D3248F400410E42 /* StackLinkedListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackLinkedListTest.swift; sourceTree = "<group>"; };
 		838C6EC72D3A97EA003A9073 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 				83CD93F12D40B56300DFB2BD /* SelectionSort.swift */,
 				83CD93F52D4517F900DFB2BD /* InsertionSort.swift */,
 				8339E9A92D4606EE00569F64 /* MergeSort.swift */,
+				8339E9AD2D4783D300569F64 /* QuickSort.swift */,
 			);
 			path = Sortings;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				83CD93EF2D40B33100DFB2BD /* SelectionSortTest.swift */,
 				83CD93F32D44F1A900DFB2BD /* InsertionSortTest.swift */,
 				83CD93F72D46020500DFB2BD /* MergeSortTest.swift */,
+				8339E9AB2D477F0D00569F64 /* QuickSortTest.swift */,
 			);
 			path = Sortings;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				83F5A0FF2D33978B00A02D6F /* Queue.swift in Sources */,
 				8339E9AA2D4606EE00569F64 /* MergeSort.swift in Sources */,
 				830F317E2D268B0F0046A6C1 /* MergeSortedArrays.swift in Sources */,
+				8339E9AE2D4783D300569F64 /* QuickSort.swift in Sources */,
 				83BBD6502D0DA250007DD730 /* BinarySearch.swift in Sources */,
 				839F53592D283D6A00B6C3AA /* HashTable.swift in Sources */,
 				83CD93F22D40B56300DFB2BD /* SelectionSort.swift in Sources */,
@@ -483,6 +490,7 @@
 				83BBD6522D0DA4B6007DD730 /* BinarySearchTest.swift in Sources */,
 				839F535B2D283D7F00B6C3AA /* HashTableTest.swift in Sources */,
 				830F31802D268B1A0046A6C1 /* MergeSortedArraysTest.swift in Sources */,
+				8339E9AC2D477F0D00569F64 /* QuickSortTest.swift in Sources */,
 				83CD93F42D44F1A900DFB2BD /* InsertionSortTest.swift in Sources */,
 				361608092D2FCFB800D461F4 /* ReverseLinkedListTest.swift in Sources */,
 				838C6ED62D3D0AB9003A9073 /* FactorialTest.swift in Sources */,
