@@ -18,7 +18,10 @@ func mergeSort(_ array: [Int]) -> [Int] {
     let right = Array(array[middle...]) // right half
     
     // recursively merge sort the left and right halves, then merge them
-    return merge(mergeSort(left), mergeSort(right))
+    return merge(
+        mergeSort(left),
+        mergeSort(right)
+    )
 }
 
 // merge function to combine two sorted arrays
