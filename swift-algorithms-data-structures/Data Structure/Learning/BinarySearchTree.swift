@@ -145,4 +145,28 @@ class BinarySearchTree<T: Comparable> {
         return false // Value not found, nothing to remove
     }
     
+    func breadFirstSearch() -> [T] {
+        var result: [T] = []
+        var queue: [Node<T>] = []
+        
+        if let root = root {
+            queue.append(root)
+        }
+        
+        while !queue.isEmpty {
+            let currentNode = queue.removeFirst()
+            result.append(currentNode.value)
+            
+            if let leftNode = currentNode.left {
+                queue.append(leftNode)
+            }
+            
+            if let rightNode = currentNode.right {
+                queue.append(rightNode)
+            }
+        }
+        
+        return result
+    }
+    
 }
